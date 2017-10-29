@@ -253,7 +253,7 @@ button{
     background-color: white;
     border-color: #3E0E01;
     margin: auto;
-    padding: 0;
+    padding: 5px;
     line-height: 24px;
     vertical-align: middle;
     }
@@ -261,7 +261,6 @@ button{
 button p{
     color: #3E0E01;
     text-align: center;
-    padding: 5px;
     font-family: 'Rubik', sans-serif;
 }
 
@@ -272,9 +271,27 @@ button:hover {
     border-color: white;
     background-color: #3E0E01;
     font-color: white;
+
 }
 
 button p:hover{
     color: white;
 }
 
+.itemCount{
+    position:relative;
+    top:-39px;
+    left:15px;
+    color:black;
+}
+
+.delete{
+    color: white;
+    background-color: #3E0E01;
+    border: none;
+}
+
+
+.delete:hover{
+    text-decoration: underline;
+}

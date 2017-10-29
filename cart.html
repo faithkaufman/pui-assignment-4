@@ -5,6 +5,8 @@
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- javascript -->
     <script src="main.js" type="text/javascript"></script>
     <!-- fonts -->
@@ -16,7 +18,7 @@
         <nav>
             <div class="container">
                 <ul id="nav">
-                    <li><a href="cart.html"><img id=alt="Cart" src="images/icons/shopping-cart.png"></a></li>
+                    <li><a id="cart" href="cart.html"><img alt="Cart" src="images/icons/shopping-cart.png"></a><span class= "itemCount">0</span></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="index.html">Home</a></li>
@@ -30,8 +32,9 @@
     <div class="container">
     <div class="section group">
         <h2 class="top-of-page">Your Shopping Bag</h2>
+
     </div>
-        <div class="section group">
+        <div class="section group" id="drawCart">
             <div class="section group">
                 <section class="col span_3_of_12" >
                     <a href="birthday-cake.html"><img src="images/flavors/birthday-cake.png" alt="birthday cake bun" class="selected-buns"></a>
@@ -47,6 +50,7 @@
                         Remove item from cart
                     </p>
 
+
                 </section>
                 <section class="col span_3_of_12" >
                 </section>
@@ -57,31 +61,12 @@
                 </section>
 
             </div>
+
+
+
+
             <h2>You May Also Like</h2>
-            <div class="section group">
-                 <section class="col span_12_of_12" class="ugh">
-                <section class="col span_3_of_12">
-                       <a href="#"><img src="images/flavors/buttermilk.png" alt="buttermilk bun" class="selected-buns" ></a>
-                       <p>Buttermilk Bun Bun
-                        <br>$3.99</p>
-                </section>
-                <section class="col span_3_of_12">
-                        <a href="#"><img src="images/flavors/caramel-pecan.png" alt="caramel pecan bun" class="selected-buns" ></a>
-                        <p>Caramel Pecan Bun Bun
-                        <br>$3.99</p>
-                </section>
-                <section class="col span_3_of_12">
-                        <a href="#"><img src="images/flavors/cranberry.png" alt="carrot cake bun" class="selected-buns" ></a>
-                        <p>Cranberry Bun Bun
-                        <br>$3.99</p>
-                </section>
-                 <section class="col span_3_of_12">
-                        <a href="#"><img src="images/flavors/carrot-cake.png" alt="carrot cake bun" class="selected-buns" ></a>
-                        <p>Carrot Cake Bun Bun
-                        <br>$3.99</p>
-                </section>
-                </section>
-            </div>
+
             </section>
         </section>
         <h2>Estimation</h2>

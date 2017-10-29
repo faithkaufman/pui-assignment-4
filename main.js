@@ -30,40 +30,105 @@ $ (document).ready(function(){
 
     });
 
+    $(".itemCount").text(getCart().length)
 
 
 
 
 
+
+
+    function getCart() {
+        if (localStorage.cart == undefined) {
+            localStorage.setItem('cart', JSON.stringify([]));
+        }
+        return JSON.parse(localStorage.getItem('cart'));
+    }
+
+    function saveCart(items){
+        localStorage.setItem('cart', JSON.stringify(items));
+    }
+
+
+    function add(item) {
+        cart = getCart();
+        cart.push(item);
+        $(".itemCount").text(cart.length)
+        saveCart(cart);
+    }
+
+
+
+    function cartDraw(){
+
+      cart = getCart();
+      f = ``;
+
+      for (var i = 0; i < cart.length; i++) {
+
+          f += `<div class="section group">
+                  <section class="col span_3_of_12" >
+                      <a href="birthday-cake.html"><img src="images/flavors/birthday-cake.png" alt="birthday cake bun" class="selected-buns"></a>
+                  </section>
+                  <section class="col span_3_of_12" >
+                      <p>
+                          ${cart[i].name}
+                          <br>
+                          Other Flavors: ${cart[i].otherFlavors}
+                          <br>
+                          #34345568903
+                          <br>
+                          ${cart[i].quanity}
+                          <br>
+                          </p>
+                          <button data-index="${i}" class="delete">Remove From Cart</button>
+
+
+                  </section>
+                  <section class="col span_3_of_12" >
+                  </section>
+                  <section class="col span_3_of_12" >
+                      <p>
+                          $3.99
+                      </p>
+                  </section>
+
+              </div>
+            `
+      };
+      $('#drawCart').html(f);
+
+      $(".itemCount").text(cart.length)
+
+      $('.delete').click(function(){
+        i = $(this).data('index');
+        var cart = getCart();
+        cart.splice(i,1);
+        saveCart(cart);
+        window.location.reload();
+      });
+
+    }
+
+    cartDraw();
 
 
     $("#addToCart").click(function() {
-
-
-        var otherFlavrs = ''
+        var otherFlavors = ''
 
 
         $('input[type=checkbox]:checked').each(function(val) {
             console.log(this.name);
-            otherFlavrs += this.name
+            otherFlavors += this.name
         })
         var item = $('.top-of-page').text();
-        //get the quantity
-
-        //get the flavors
-
-        //set the local storage object as a string
-
-
-        //update the cart nav (within local storage?)
-
         var quantity = $('#quantity').find(":selected").text();
 
 
-        console.log(item);
-        localStorage.setItem('', quantity);
-
+        add({name: item, otherFlavors: otherFlavors, quantity: quantity});
     });
+
+
 
 
 
