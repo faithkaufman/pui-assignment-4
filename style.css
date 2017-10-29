@@ -295,3 +295,17 @@ button p:hover{
 .delete:hover{
     text-decoration: underline;
 }
+
+#checkout h3{
+    color: white;
+}
+
+
+#checkout {
+    background: none;
+    border: none;
+}
+
+#checkout:hover h3{
+    text-decoration: underline;
+}

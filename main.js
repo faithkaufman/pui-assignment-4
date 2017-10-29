@@ -78,7 +78,7 @@ $ (document).ready(function(){
                           <br>
                           #34345568903
                           <br>
-                          ${cart[i].quanity}
+                          ${cart[i].quantity}
                           <br>
                           </p>
                           <button data-index="${i}" class="delete">Remove From Cart</button>
